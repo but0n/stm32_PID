@@ -3,30 +3,30 @@
 
 #define PID_TEST
 
-//	Output (e.g PWM Register)
-#define MOTOR1 outputRegister_1
-#define MOTOR2 outputRegister_2
+#ifdef PID_TEST
+	//	Output (e.g PWM Register)
+	#define MOTOR1 outputRegister_1
+	#define MOTOR2 outputRegister_2
 
-__IO uint16_t outputRegister_1;
-__IO uint16_t outputRegister_2;
+	__IO uint16_t outputRegister_1;
+	__IO uint16_t outputRegister_2;
 
-//	Input (e.g Source data from IMU)
+	//	Input (e.g Source data from IMU)
 
-float gyroInput;
-float g_Roll;
+	float gyroInput;
+	float g_Roll;
 
 
-
-pid_st g_pid_roll = {
-	.InnerLast  = 0,
-	.OutterLast = 0,
-	.Feedback   = &g_Roll,
-	.i          = 0,
-	.Channel1   = &MOTOR1,
-	.Channel2   = &MOTOR2,
-	.Gyro       = &gyroInput,
-};
-
+	pid_st g_pid_roll = {
+		.InnerLast  = 0,
+		.OutterLast = 0,
+		.Feedback   = &g_Roll,
+		.i          = 0,
+		.Channel1   = &MOTOR1,
+		.Channel2   = &MOTOR2,
+		.Gyro       = &gyroInput,
+	};
+#endif
 
 int main() {
 
