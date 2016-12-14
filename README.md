@@ -1,4 +1,4 @@
-# stm32_PID
+# stm32_PID	[![Build Status](https://travis-ci.org/but0n/stm32_PID.svg?branch=master)](https://travis-ci.org/but0n/stm32_PID)
 
 串级PID
 
